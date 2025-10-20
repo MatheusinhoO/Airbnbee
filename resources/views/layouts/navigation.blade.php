@@ -23,7 +23,7 @@
 
         body {
             color: #222222;
-            background-color: #ffffff;
+            background-color: #e7e7e7;
         }
 
 
