@@ -556,7 +556,7 @@
 
         <div class="city-indicator">
             <span>📍</span>
-            <a href="{{ route('tabela') }}">Tatui,Sp</a>
+            <a href="{{ route('tabela') }}">Tatui-Sp</a>
         </div>
 
         <div class="search-bar">
