@@ -651,46 +651,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-
-            const cards = document.querySelectorAll(
-                '.listing-card, .neighborhood-item, .highlight-card, .experience-card');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px)';
-                    this.style.transition = 'transform 0.2s';
-                });
-
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
-
-
-            const neighborhoodItems = document.querySelectorAll('.neighborhood-item');
-            neighborhoodItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const neighborhoodName = this.querySelector('.neighborhood-name').textContent;
-                    alert(
-                        `Você selecionou o bairro: ${neighborhoodName}. Em uma implementação real, isso filtraria as acomodações por bairro.`
-                        );
-                });
-            });
-
-
-            const searchButton = document.querySelector('.search-large button');
-            searchButton.addEventListener('click', function() {
-                const searchInput = document.querySelector('.search-large input');
-                if (searchInput.value.trim() !== '') {
-                    alert(`Buscando por: "${searchInput.value}" no Rio de Janeiro`);
-                } else {
-                    alert('Digite algo para pesquisar');
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
