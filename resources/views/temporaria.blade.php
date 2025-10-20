@@ -4,7 +4,7 @@
 
 @section('body')  
     <header>
-        <a href="#" class="logo">air<span>bee</span></a>
+        <a href="#" class="logo">Air<span>Bee</span></a>
         
         <div class="city-indicator">
             <span>📍</span>
