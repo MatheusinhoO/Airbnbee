@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         * {
-            
+
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -527,66 +527,92 @@
                 text-align: center;
             }
 
-        .city-indicator{
-            color: #000000;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
+            .city-indicator {
+                color: #000000;
+                text-decoration: none;
+                padding: 10px 15px;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+                display: inline-block;
+            }
 
-         .city-indicator {
-            background-color: #f0f7ff;
-        }
+            .city-indicator {
+                background-color: #f0f7ff;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-            <div class="logo">
-                    <a class="logo" href="{{ route('dashboard') }}">
-                        <img src="logol.png" alt=""  width="70" height="70">
-                    </a>
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Airbnbee</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">BNB</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Cadastrar
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Propriedade</a></li>
+                                <li><a class="dropdown-item" href="#">Categoria</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Deletar Propriedade</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('tabela') }}">Encontre o local perfeito</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                {{ Auth::user()->name }}
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Perfil</a></li>
 
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
 
-
-        <div class="city-indicator">
-            <span>📍</span>
-            <a href="{{ route('tabela') }}">Tatui-Sp</a>
-        </div>
-
-        <div class="search-bar">
-            <div>Qualquer data</div>
-            <div>Qualquer bairro</div>
-            <div>Hóspedes</div>
-            <div>🔍</div>
-        </div>
-
-        
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                {{ Auth::user()->name }}
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Perfil</a></li>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-dropdown-link :href="route('logout')"
-                        onclick="event.preventDefault();
+                                    <li class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-dropdown-link>
-                </form>
+                                        {{ __('Log Out') }}
+                                    </li>
+                                </form>
 
-            </ul>
-        </li>
-    </header>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <a href="{{ route('tabela') }}">Tatui-Sp</a>
 
 
 

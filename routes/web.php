@@ -21,9 +21,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/home', function () {
-    return view('temporaria');
-})->name('home');
 
 Route::get('/teste', function () {
     return view('teste1');
@@ -49,11 +46,13 @@ Route::get('/escolha', function () {
 Route::get('/tabela_basica',[localizacaoController::class,'mostra_localizacao'])->name('tabela');
 Route::post('/salva_locação', [detalhe_comodacaoController::class,'cadastrar_detalhes'])->name('locacao.salva');
 
-Route::post('/salva_informacao_basica', [informacao_basicaController::class,'cadastrar_informacao_basicas'])->name('informacao.salva');
+Route::post('/tabela_basica',[LocalizacaoController::class,'mostra_localizacao_filtro'])->name('mostra_locacao_filtro');
+
+Route::post('/salva_informacao_basica', [informacao_basicaController::class,'cadastrar_informacao_basicas'])->name('informacaosalva');
 
 Route::post('/salva_localizacao', [localizacaoController::class,'cadastrar_localizacao'])->name('localizacao.salva');
 
-Route::get('/localizacao_alterar/{id}', [localizacaoController::class,'atualizar_localizacao']);
+Route::get('/atualizar_localizacao/{id}', [localizacaoController::class,'atualizar_localizacao']);
 
 Route::post('/muda_localizacao', [localizacaoController::class,'atualizar_locacao'])->name('alterar_localizacao');
 

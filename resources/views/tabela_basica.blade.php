@@ -10,6 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AirBnBee - Encontre seu lugar perfeito</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         * {
             margin: 0;
@@ -253,6 +258,24 @@
             <h2>Encontre seu lugar perfeito</h2>
             <p>Descubra espaços únicos para sua próxima viagem</p>
         </div>
+
+        <form action="{{route('mostra_locacao_filtro')}}" method="POST">
+            @csrf
+            <div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <label for="sua_locacao">sua locação</label>
+                        <input type="text" class="form-control form-control-sm" name="sua_locacao" id="sua_locacao">
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-12 ms-1">
+                        <label for=""></label>
+                        <button type="submit" class="btn btn-sm btn-danger mt-2">Filtrar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+            <br>
         
         <div class="properties-grid">
             @foreach($locacao as $i)
@@ -272,7 +295,7 @@
                 </div>
             </div>
             @endforeach
-            
+      
             @if(count($locacao) === 0)
             <div class="no-properties">
                 <h3>Nenhuma propriedade encontrada</h3>

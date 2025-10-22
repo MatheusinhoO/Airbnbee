@@ -47,7 +47,7 @@ class informacao_basicaController extends Controller
         $informacao->preco_noite = $request->input('preco_noite');
         $informacao->politica_cancelamento= $request->input('politica_cancelamento');
         $informacao->save();
-        return redirect('/anuncio');
+        return redirect('/atualizar_localizacao/');
     }
 
         public function deletar_informacoes_basicas($id){
@@ -59,6 +59,6 @@ class informacao_basicaController extends Controller
     public function deletar_informacoes(request $request){
       informacoes_basicas::where('id',$request->id_informacao)->delete();
 
-      return redirect('/login');
+      return redirect('/localizacao_deletar/');
   }
 }

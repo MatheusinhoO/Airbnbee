@@ -44,7 +44,7 @@ class localizacaoController extends Controller
         $locacao->duracao_estadia = $request->duracao_estadia;
         $locacao->save();
 
-        return redirect('/anuncio');
+        return redirect('/tabela_basica');
     }
 
     public function deletar_localizacao($id){
@@ -56,7 +56,7 @@ class localizacaoController extends Controller
     public function deletar_locacao(request $request){
       localizacao::where('id',$request->id_localizacao)->delete();
 
-      return redirect('/login');
+      return redirect('/tabela_basica');
   }
 
 
@@ -64,4 +64,10 @@ class localizacaoController extends Controller
         $locacao= localizacao::get()->all();
         return view('tabela_basica')->with('locacao',$locacao);
   }
+
+      public function mostra_localizacao_filtro(Request $request){
+        $locacao= localizacao::where('endereco','LIKE','%'.$request->sua_locacao.'%')->get()->all();
+        return view('tabela_basica')->with('locacao',$locacao);
+  }
+
 }

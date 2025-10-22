@@ -50,7 +50,7 @@ class detalhe_comodacaoController extends Controller
         $detalhe->horario_check_out = $request->input('horario_check_out');
         $detalhe->save();
 
-        return redirect('/anuncio');
+        return redirect('/atualizar_informacao/');
     }
 
     public function deletar_detalhes_comodacoes($id){
@@ -62,6 +62,6 @@ class detalhe_comodacaoController extends Controller
     public function deletar_detalhe(request $request){
       detalhe_c::where('id',$request->id_detalhe)->delete();
 
-      return redirect('/login');
+      return redirect('/informacao_deletar/');
   }
 }

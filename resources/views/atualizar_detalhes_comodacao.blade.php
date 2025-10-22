@@ -214,7 +214,7 @@
 
             <div class="form-group">
                 <label for="comodidade_oferecidas">Comodidades Oferecidas <span class="required">*</span></label>
-                <select id="comodidade_oferecidas" name="comodidade_oferecidas">
+                <select id="comodidade_oferecidas" name="comodidade_oferecidas" required>
                     <option value="">{{ $detalhe->comodidade_oferecidas }}</option>
                     <option value="wi-fi">Wi-fi</option>
                     <option value="ar_condicionados">Ar-condicionado</option>
@@ -227,7 +227,7 @@
 
             <div class="form-group">
                 <label for="permite_fumar">Permite Fumar <span class="required">*</span></label>
-                <select id="permite_fumar" name="permite_fumar">
+                <select id="permite_fumar" name="permite_fumar" required>
                     <option value="">{{ $detalhe->permite_fumar }}</option>
                     <option value="sim">Sim</option>
                     <option value="nao">Não</option>
@@ -236,7 +236,7 @@
 
             <div class="form-group">
                 <label for="permite_festa">Permite Festas/Eventos <span class="required">*</span></label>
-                <select id="permite_festa" name="permite_festa">
+                <select id="permite_festa" name="permite_festa" required>
                     <option value="">{{ $detalhe->permite_festa}}</option>
                     <option value="sim">Sim</option>
                     <option value="nao">Não</option>
@@ -245,7 +245,7 @@
 
             <div class="form-group">
                 <label for="permite_animais">Permite Animais de Estimação <span class="required">*</span></label>
-                <select id="permite_animais" name="permite_animais">
+                <select id="permite_animais" name="permite_animais" required>
                     <option value="">{{ $detalhe->permite_animais}}</option>
                     <option value="sim">Sim</option>
                     <option value="nao">Não</option>

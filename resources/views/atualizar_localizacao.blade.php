@@ -208,7 +208,7 @@
 
             <div class="form-group">
                 <label for="duracao_estadia">Duração Mínima da Estadia (noites)</label>
-                <input type="number" id="duracao_estadia" name="duracao_estadia" min="1" placeholder="{{ $locacao->duracao_estadia}}">
+                <input type="number" id="duracao_estadia" name="duracao_estadia" min="1" placeholder="{{ $locacao->duracao_estadia}}" required>
             </div>
 
             <button type="submit" class="btn-submit">Atualizar Localização</button>

@@ -182,7 +182,7 @@
         <input type="text" class="d-none" name="id_informacao" id="id_informacao" value={{ $informacao->id }}>
             <div class="form-group">
                 <label for="propriedade_tipo">Tipo de Propriedade <span class="required">*</span></label>
-                <select id="propriedade_tipo" name="propriedade_tipo">
+                <select id="propriedade_tipo" name="propriedade_tipo" required>
                     <option value="">{{ $informacao->propriedade_tipo }}</option>
                     <option value="casa">Casa</option>
                     <option value="apartamento">Apartamento</option>
@@ -198,7 +198,7 @@
 
             <div class="form-group">
                 <label for="acomodacoes_tipo">Tipo de Acomodações <span class="required">*</span></label>
-                <select id="acomodacoes_tipo" name="acomodacoes_tipo">
+                <select id="acomodacoes_tipo" name="acomodacoes_tipo" required>
                     <option value="">{{ $informacao->acomodacoes_tipo }}</option>
                     <option value="propriedade_inteira">Propriedade Inteira</option>
                     <option value="quarto_privado">Quarto Privado</option>
@@ -235,7 +235,7 @@
 
             <div class="form-group">
                 <label for="politica_cancelamento">Política de Cancelamento <span class="required">*</span></label>
-                <select id="politica_cancelamento" name="politica_cancelamento">
+                <select id="politica_cancelamento" name="politica_cancelamento" required>
                     <option value="">{{ $informacao->politica_cancelamento }}</option>
                     <option value="flexivel">Flexível - Reembolso total até 24h antes</option>
                     <option value="moderada">Moderada - Reembolso total até 5 dias antes</option>
