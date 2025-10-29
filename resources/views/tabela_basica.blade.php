@@ -284,6 +284,7 @@
                     <img src="casa2.jpg" alt="">
                 </div>
                 <div class="property-info">
+                    <img src="{{ asset($i->Imagem) }}" alt="">
                     <h3 class="property-address">{{ $i->endereco }}</h3>
                     <div class="property-availability">
                         Disponível: {{ $i->calendario_disponibilidade }}

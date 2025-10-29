@@ -200,6 +200,11 @@
             </div>
 
             <div class="form-group">
+                <label for="titulo">Imagem <span class="required">*</span></label>
+                <input type="text" id="Imagem" name="Imagem" placeholder="digite sua imagem" required>
+            </div>
+
+            <div class="form-group">
                 <label for="descricao">Descrição Detalhada <span class="required">*</span></label>
                 <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva sua propriedade, o que a torna especial, a vizinhança, etc." required></textarea>
             </div>

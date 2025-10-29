@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\models\detalhe_c;
+use Illuminate\Http\Request;
 
 class detalhe_comodacaoController extends Controller
 {
-    public function cadastro_detalhes(Request $request){
+    public function cadastro_detalhes(Request $request)
+    {
         return view('detalhes_da_comodacao');
     }
 
-    public function cadastrar_detalhes(Request $request){
-        $detalhe = new detalhe_c();
+    public function cadastrar_detalhes(Request $request)
+    {
+        $detalhe = new detalhe_c;
         $detalhe->titulo = $request->input('titulo');
         $detalhe->descricao = $request->input('descricao');
         $detalhe->destaques = $request->input('destaques');
@@ -22,12 +24,13 @@ class detalhe_comodacaoController extends Controller
         $detalhe->permite_animais = $request->input('permite_animais');
         $detalhe->horario_check_in = $request->input('horario_check_in');
         $detalhe->horario_check_out = $request->input('horario_check_out');
+        $detalhe->Imagem = $request->input('Imagem');
         $detalhe->save();
 
         return redirect('/informações_basicas');
     }
 
-        public function atualizar_detalhe($id)
+    public function atualizar_detalhe($id)
     {
         $detalhe = detalhe_c::find($id);
 
@@ -36,7 +39,7 @@ class detalhe_comodacaoController extends Controller
 
     public function atualizar_detalhe_c(Request $request)
     {
-    
+
         $detalhe = detalhe_c::find($request->id_detalhe);
 
         $detalhe->titulo = $request->input('titulo');
@@ -53,15 +56,18 @@ class detalhe_comodacaoController extends Controller
         return redirect('/atualizar_informacao/');
     }
 
-    public function deletar_detalhes_comodacoes($id){
+    public function deletar_detalhes_comodacoes($id)
+    {
         $detalhe = detalhe_c::find($id);
 
         return view('deletar_detalhes_comodacoes')->with('detalhe', $detalhe);
-  }
+    }
 
-    public function deletar_detalhe(request $request){
-      detalhe_c::where('id',$request->id_detalhe)->delete();
+    public function deletar_detalhe(request $request)
+    {
+        detalhe_c::where('id', $request->id_detalhe)->delete();
 
-      return redirect('/informacao_deletar/');
-  }
+        return redirect('/informacao_deletar/');
+    }
+
 }

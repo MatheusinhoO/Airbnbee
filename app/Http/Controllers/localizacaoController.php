@@ -34,7 +34,7 @@ class localizacaoController extends Controller
 
     public function atualizar_locacao(Request $request)
     {
-    
+
         $locacao = localizacao::find($request->id_localizacao);
 
         $locacao->endereco = $request->endereco;
@@ -47,27 +47,31 @@ class localizacaoController extends Controller
         return redirect('/tabela_basica');
     }
 
-    public function deletar_localizacao($id){
+    public function deletar_localizacao($id)
+    {
         $locacao = localizacao::find($id);
 
-        return view('deletar_localizacao')->with('locacao',$locacao);
-  }
+        return view('deletar_localizacao')->with('locacao', $locacao);
+    }
 
-    public function deletar_locacao(request $request){
-      localizacao::where('id',$request->id_localizacao)->delete();
+    public function deletar_locacao(request $request)
+    {
+        localizacao::where('id', $request->id_localizacao)->delete();
 
-      return redirect('/tabela_basica');
-  }
+        return redirect('/tabela_basica');
+    }
 
+    public function mostra_localizacao(Request $request)
+    {
+        $locacao = localizacao::get()->all();
 
-    public function mostra_localizacao(Request $request){
-        $locacao= localizacao::get()->all();
-        return view('tabela_basica')->with('locacao',$locacao);
-  }
+        return view('tabela_basica')->with('locacao', $locacao);
+    }
 
-      public function mostra_localizacao_filtro(Request $request){
-        $locacao= localizacao::where('endereco','LIKE','%'.$request->sua_locacao.'%')->get()->all();
-        return view('tabela_basica')->with('locacao',$locacao);
-  }
+    public function mostra_localizacao_filtro(Request $request)
+    {
+        $locacao = localizacao::where('endereco', 'LIKE', '%'.$request->sua_locacao.'%')->get()->all();
 
+        return view('tabela_basica')->with('locacao', $locacao);
+    }
 }

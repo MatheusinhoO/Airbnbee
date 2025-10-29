@@ -11,13 +11,13 @@ class informacoes_basicas extends Model
     public $timestamps = false;
 
     protected $fillable = [
-    'propriedade_tipo',
-    'acomodacoes_tipo',
-    'capacidade_hospedes',
-    'quartos_quantidade',
-    'camas_quantidade',
-    'banheiros_quantidade',
-    'preco_noite',
-    'politica_cancelamento',
-    ];  
+        'propriedade_tipo',
+        'acomodacoes_tipo',
+        'capacidade_hospedes',
+        'quartos_quantidade',
+        'camas_quantidade',
+        'banheiros_quantidade',
+        'preco_noite',
+        'politica_cancelamento',
+    ];
 }
